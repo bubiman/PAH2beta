@@ -1,2 +1,3 @@
 # Module pah2beta
 # RPC service class, partial path of RPC policy file
+com.pah2beta.myproject.client.GreetingService, 233F28FD7328AC9166C9EADD21E86EA2.gwt.rpc

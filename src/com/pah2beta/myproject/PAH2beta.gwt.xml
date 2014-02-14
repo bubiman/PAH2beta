@@ -19,6 +19,8 @@
 
   <!-- Other module inherits                                      -->
 
+	<inherits name="com.google.gwt.xml.XML"/>
+	
   <!-- Specify the app entry point class.                         -->
   <entry-point class='com.pah2beta.myproject.client.PAH2beta'/>
 

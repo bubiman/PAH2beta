@@ -1,12 +1,13 @@
 package com.pah2beta.myproject.client;
 
-import java.util.Map;
+
+
+import java.util.HashMap;
 
 import com.pah2beta.myproject.shared.FieldVerifier;
 import com.sun.corba.se.impl.interceptors.SlotTableStack;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.dev.util.collect.HashMap;
 import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -106,7 +107,7 @@ class Sitzung {
 class Sitzungen
 {
 	
-	Map<String,Sitzung> sitzungenNachTicketId = new HashMap<String,Sitzung>(); 
+	HashMap<String,Sitzung> sitzungenNachTicketId = new HashMap<String,Sitzung>(); 
 	
 	
 	public Sitzungen()
