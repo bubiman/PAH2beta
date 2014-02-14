@@ -1,0 +1,2 @@
+serviceClass: com.pah2beta.myproject.client.GreetingService
+path: 233F28FD7328AC9166C9EADD21E86EA2.gwt.rpc
