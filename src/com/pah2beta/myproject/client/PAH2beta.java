@@ -347,7 +347,7 @@ class Sitzungen
 	{
 	    globalDebugger = new FlexTable();
 	    globalSitzungen = new Sitzungen();
-	    globalRedmineConnector = new RedmineConnector("https://redmine.piratenfraktion-nrw.de/",true);
+	    globalRedmineConnector = new RedmineConnector("https://abstimmung2.piratenfraktion-nrw.de/",false);
   
 		SplitLayoutPanel splitPanel = new SplitLayoutPanel(8);
 	    splitPanel.ensureDebugId("cwSplitLayoutPanel");
