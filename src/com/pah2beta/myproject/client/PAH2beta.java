@@ -321,6 +321,10 @@ class Sitzungen
 	        i++;  
         }  
         
+        
+        
+        globalSitzungenWidget = this.getUi();
+        
 		
 	}
 	
@@ -352,7 +356,8 @@ class Sitzungen
 	    globalDebugger = new FlexTable();
 	    globalSitzungen = new Sitzungen();
 	    globalRedmineConnector = new RedmineConnector("https://abstimmung2.piratenfraktion-nrw.de/",false);
-  
+	    globalSitzungenWidget = new Widget();
+	    
 		SplitLayoutPanel splitPanel = new SplitLayoutPanel(8);
 	    splitPanel.ensureDebugId("cwSplitLayoutPanel");
 	    splitPanel.getElement().getStyle()
@@ -375,11 +380,8 @@ class Sitzungen
 	    
 	    StackLayoutPanel slpLinks = new StackLayoutPanel(Unit.PX);
 	
-	    
-
-	    globalRedmineConnector.getSitzungen();
 	    ScrollPanel sPanel = new ScrollPanel();
-	    sPanel.add(globalSitzungen.getUi());
+	    sPanel.add(globalSitzungenWidget);
 
         slpLinks.add(sPanel,"Sitzungen",40);
 	    slpLinks.add(fPanelFilter,"Filter", 40);
@@ -398,7 +400,9 @@ class Sitzungen
 	    splitPanel.add(centerScrollable);
 		
 	    RootLayoutPanel.get().add(splitPanel);
-		
+
+	    globalRedmineConnector.getSitzungen();
+
 
 	}
 	
@@ -409,6 +413,7 @@ class Sitzungen
 	public Sitzungen globalSitzungen;
 	public RedmineConnector globalRedmineConnector;
 	public FlexTable globalDebugger;
+	public Widget globalSitzungenWidget;
 	
 	public void onModuleLoad() {
 		init();
