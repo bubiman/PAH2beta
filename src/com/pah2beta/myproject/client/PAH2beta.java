@@ -100,18 +100,20 @@ class RedmineConnector {
 					{
 					  @Override
 					  public void onResponseReceived(Request req, Response resp) {
+						  myDebugger("Debug", "Antwort bekommen "+resp.getText());
 						  globalSitzungen.update(resp.getText());
 					 }
 
 					  @Override
 					  public void onError(Request res, Throwable throwable) {
 					    // handle errors
+						  myDebugger("Error","Fehler bei der Antwort zu getSitzungen()");
 					  }
 
 					});
 			} catch (RequestException e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+				  myDebugger("Exception","Fehler bei der Antwort zu getSitzungen()");
 			}
 		}
 		
