@@ -18,6 +18,7 @@ import com.google.gwt.http.client.RequestBuilder;
 import com.google.gwt.http.client.RequestCallback;
 import com.google.gwt.http.client.RequestException;
 import com.google.gwt.http.client.Response;
+import com.google.gwt.safehtml.shared.SafeHtmlBuilder;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Anchor;
 import com.google.gwt.user.client.ui.Button;
@@ -92,7 +93,10 @@ class RedmineConnector {
 		else
 		{
 			try {
-				String tmp = this.redmineURL+"getfromredmine.php?anfrage='https://redmine.piratenfraktion-nrw.de/issues.xml?project_id=Plenum&tracker_id=15&status_id=open&sort=cf_4'";
+				
+				SafeHtmlBuilder builder = new SafeHtmlBuilder();
+				builder.appendEscaped("https://redmine.piratenfraktion-nrw.de/issues.xml?project_id=Plenum&tracker_id=15&status_id=open&sort=cf_4");
+				String tmp = this.redmineURL+"getfromredmine.php?anfrage="+builder.toSafeHtml();
 				myDebugger("Debug", "hole von redmine "+tmp);
 				new RequestBuilder(RequestBuilder.GET, tmp).sendRequest("", new RequestCallback()
 					{
