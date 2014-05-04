@@ -96,7 +96,7 @@ class RedmineConnector {
 				
 				SafeHtmlBuilder builder = new SafeHtmlBuilder();
 				builder.appendEscaped("https://redmine.piratenfraktion-nrw.de/issues.xml?project_id=Plenum&tracker_id=15&status_id=open&sort=cf_4");
-				String tmp = this.redmineURL+"getfromredmine.php?anfrage="+builder.toSafeHtml();
+				String tmp = this.redmineURL+"getfromredmine.php?anfrage="+builder.toSafeHtml().asString();
 				myDebugger("Debug", "hole von redmine "+tmp);
 				new RequestBuilder(RequestBuilder.GET, tmp).sendRequest("", new RequestCallback()
 					{
