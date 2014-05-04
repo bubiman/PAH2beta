@@ -92,7 +92,7 @@ class RedmineConnector {
 		else
 		{
 			try {
-				String tmp = this.redmineURL+"getfromredmine.php?anfrage='issues.xml?project_id=Plenum&tracker_id=15&status_id=open&sort=cf_4'";
+				String tmp = this.redmineURL+"getfromredmine.php?anfrage='https://redmine.piratenfraktion-nrw.de/issues.xml?project_id=Plenum&tracker_id=15&status_id=open&sort=cf_4'";
 				myDebugger("Debug", "hole von redmine "+tmp);
 				new RequestBuilder(RequestBuilder.GET, tmp).sendRequest("", new RequestCallback()
 					{
