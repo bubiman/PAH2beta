@@ -3,6 +3,7 @@ package com.pah2beta.myproject.client;
 
 
 import java.util.Collection;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map.Entry;
@@ -42,7 +43,7 @@ import com.google.gwt.user.client.ui.Widget;
 import com.google.gwt.xml.client.Document;
 import com.google.gwt.xml.client.Element;
 import com.google.gwt.xml.client.XMLParser;
-
+import com.google.gwt.i18n.client.DateTimeFormat;
 
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
@@ -52,9 +53,14 @@ public class PAH2beta implements EntryPoint {
 
 public void myDebugger (String level, String text)
 {
-    int numRows = globalDebugger.getRowCount();
-    globalDebugger.setWidget(numRows, 0, new Label(level));
-    globalDebugger.setWidget(numRows, 1, new Label(text));
+	
+	Date today = new Date();
+	DateTimeFormat fmt = DateTimeFormat.getFormat("H:mm:s,S");
+	
+	globalDebugger.insertRow(0);
+    globalDebugger.setWidget(0, 0, new Label(fmt.format(today)));
+    globalDebugger.setWidget(0, 1, new Label(level));
+    globalDebugger.setWidget(0, 2, new Label(text));
 }
 	
 class RedmineConnector {
@@ -82,7 +88,7 @@ class RedmineConnector {
 			fake = false;
 		}
 	}
-	
+		
 	public void getSitzungen ()
 	{
 		myDebugger("Debug", "Hole alle Sitzungen");
@@ -322,8 +328,8 @@ class Sitzungen
         }  
         
         
-        
-        globalSitzungenWidget = this.getUi();
+        globalSitzungenSPanel.clear();
+        globalSitzungenSPanel.add(getUi());
         
 		
 	}
@@ -356,7 +362,7 @@ class Sitzungen
 	    globalDebugger = new FlexTable();
 	    globalSitzungen = new Sitzungen();
 	    globalRedmineConnector = new RedmineConnector("https://abstimmung2.piratenfraktion-nrw.de/",false);
-	    globalSitzungenWidget = new Widget();
+	    globalSitzungenSPanel = new ScrollPanel();
 	    
 		SplitLayoutPanel splitPanel = new SplitLayoutPanel(8);
 	    splitPanel.ensureDebugId("cwSplitLayoutPanel");
@@ -381,7 +387,7 @@ class Sitzungen
 	    StackLayoutPanel slpLinks = new StackLayoutPanel(Unit.PX);
 	
 	    ScrollPanel sPanel = new ScrollPanel();
-	    sPanel.add(globalSitzungenWidget);
+	    sPanel.add(globalSitzungenSPanel);
 
         slpLinks.add(sPanel,"Sitzungen",40);
 	    slpLinks.add(fPanelFilter,"Filter", 40);
@@ -413,7 +419,7 @@ class Sitzungen
 	public Sitzungen globalSitzungen;
 	public RedmineConnector globalRedmineConnector;
 	public FlexTable globalDebugger;
-	public Widget globalSitzungenWidget;
+	public ScrollPanel globalSitzungenSPanel;
 	
 	public void onModuleLoad() {
 		init();
