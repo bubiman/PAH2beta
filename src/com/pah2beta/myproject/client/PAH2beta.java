@@ -88,6 +88,41 @@ class RedmineConnector {
 			fake = false;
 		}
 	}
+	
+	public void getTops (String issueID)
+	{
+		myDebugger("Debug", "Hole alle Tops zu #"+issueID);
+
+		if (this.fake)
+		{
+			globalSitzungen.update("<issues total_count='3' offset='0' limit='25' type='array'> <issue> <id>10677</id> <project id='66' name='Plenum'/> <tracker id='15' name='Sitzung'/> <status id='10' name='ZukÃ¼nftige'/> <priority id='2' name='Normal'/> <author id='66' name='Ansgar Flack'/> <subject>UA17.1 'Klimaschutzplan' 6. Sitzung</subject> <description/> <start_date>2014-04-30</start_date> <due_date/> <done_ratio>0</done_ratio> <estimated_hours/> <custom_fields type='array'> <custom_field id='4' name='Datum'> <value>2014-05-05</value> </custom_field> <custom_field id='12' name='Ort'> <value>E1 - D05</value> </custom_field> <custom_field id='10' name='Uhrzeit von'> <value>11:00</value> </custom_field> <custom_field id='11' name='Uhrzeit bis'> <value>13:00</value> </custom_field> </custom_fields> <created_on>2014-04-30T13:26:41Z</created_on> <updated_on>2014-05-02T09:25:36Z</updated_on> <closed_on/> </issue> <issue> <id>10680</id> <project id='66' name='Plenum'/> <tracker id='15' name='Sitzung'/> <status id='10' name='ZukÃ¼nftige'/> <priority id='2' name='Normal'/> <author id='66' name='Ansgar Flack'/> <subject> A17 'Klimaschutz, Umwelt, Naturschutz, Landwirtschaft und Verbraucherschutz' 29. Sitzung </subject> <description/> <start_date>2014-04-30</start_date> <due_date/> <done_ratio>0</done_ratio> <estimated_hours/> <custom_fields type='array'> <custom_field id='4' name='Datum'> <value>2014-05-07</value> </custom_field> <custom_field id='12' name='Ort'> <value>E1 - D05</value> </custom_field> <custom_field id='10' name='Uhrzeit von'> <value>15:30</value> </custom_field> <custom_field id='11' name='Uhrzeit bis'> <value/> </custom_field> </custom_fields> <created_on>2014-04-30T13:34:13Z</created_on> <updated_on>2014-04-30T13:34:13Z</updated_on> <closed_on/> </issue> <issue> <id>10712</id> <project id='66' name='Plenum'/> <tracker id='15' name='Sitzung'/> <status id='1' name='Neu'/> <priority id='2' name='Normal'/> <author id='66' name='Ansgar Flack'/> <subject> A18 'Wirtschaft, Energie, Industrie, Mittelstand und Handwerk' 36. Sitzung </subject> <description/> <start_date>2014-05-02</start_date> <due_date/> <done_ratio>0</done_ratio> <estimated_hours/> <custom_fields type='array'> <custom_field id='4' name='Datum'> <value>2014-05-07</value> </custom_field> <custom_field id='12' name='Ort'> <value>E1 - D05</value> </custom_field> <custom_field id='10' name='Uhrzeit von'> <value>10:00</value> </custom_field> <custom_field id='11' name='Uhrzeit bis'> <value>14:00</value> </custom_field> </custom_fields> <created_on>2014-05-02T09:26:31Z</created_on> <updated_on>2014-05-02T09:26:31Z</updated_on> <closed_on/> </issue> </issues>");
+		}
+		else
+		{
+			try {
+				String tmp = this.redmineURL+"getfromredmine.php?anfrage="+URL.encodeQueryString("projects/plenum/issues.csv?f[]=relates&f[]=&group_by=&op[relates]==&op[status_id]=o&set_filter=1&utf8=âœ“&v[relates][]="+issueID);
+				myDebugger("Debug", "hole von redmine "+tmp);
+				new RequestBuilder(RequestBuilder.GET, tmp).sendRequest("", new RequestCallback()
+					{
+					  @Override
+					  public void onResponseReceived(Request req, Response resp) {
+						  myDebugger("Debug", "Antwort bekommen "+resp.getText());
+						 // globalSitzungen.update(resp.getText());
+					 }
+
+					  @Override
+					  public void onError(Request res, Throwable throwable) {
+					    // handle errors
+						  myDebugger("Error","Fehler bei der Antwort zu getSitzungen()");
+					  }
+
+					});
+			} catch (RequestException e) {
+				// TODO Auto-generated catch block
+				  myDebugger("Exception","Fehler bei der Antwort zu getSitzungen()");
+			}
+		}		
+	}
 		
 	public void getSitzungen ()
 	{
@@ -95,12 +130,12 @@ class RedmineConnector {
 
 		if (this.fake)
 		{
-			globalSitzungen.update("<issues total_count='3' offset='0' limit='25' type='array'> <issue> <id>10677</id> <project id='66' name='Plenum'/> <tracker id='15' name='Sitzung'/> <status id='10' name='Zukünftige'/> <priority id='2' name='Normal'/> <author id='66' name='Ansgar Flack'/> <subject>UA17.1 'Klimaschutzplan' 6. Sitzung</subject> <description/> <start_date>2014-04-30</start_date> <due_date/> <done_ratio>0</done_ratio> <estimated_hours/> <custom_fields type='array'> <custom_field id='4' name='Datum'> <value>2014-05-05</value> </custom_field> <custom_field id='12' name='Ort'> <value>E1 - D05</value> </custom_field> <custom_field id='10' name='Uhrzeit von'> <value>11:00</value> </custom_field> <custom_field id='11' name='Uhrzeit bis'> <value>13:00</value> </custom_field> </custom_fields> <created_on>2014-04-30T13:26:41Z</created_on> <updated_on>2014-05-02T09:25:36Z</updated_on> <closed_on/> </issue> <issue> <id>10680</id> <project id='66' name='Plenum'/> <tracker id='15' name='Sitzung'/> <status id='10' name='Zukünftige'/> <priority id='2' name='Normal'/> <author id='66' name='Ansgar Flack'/> <subject> A17 'Klimaschutz, Umwelt, Naturschutz, Landwirtschaft und Verbraucherschutz' 29. Sitzung </subject> <description/> <start_date>2014-04-30</start_date> <due_date/> <done_ratio>0</done_ratio> <estimated_hours/> <custom_fields type='array'> <custom_field id='4' name='Datum'> <value>2014-05-07</value> </custom_field> <custom_field id='12' name='Ort'> <value>E1 - D05</value> </custom_field> <custom_field id='10' name='Uhrzeit von'> <value>15:30</value> </custom_field> <custom_field id='11' name='Uhrzeit bis'> <value/> </custom_field> </custom_fields> <created_on>2014-04-30T13:34:13Z</created_on> <updated_on>2014-04-30T13:34:13Z</updated_on> <closed_on/> </issue> <issue> <id>10712</id> <project id='66' name='Plenum'/> <tracker id='15' name='Sitzung'/> <status id='1' name='Neu'/> <priority id='2' name='Normal'/> <author id='66' name='Ansgar Flack'/> <subject> A18 'Wirtschaft, Energie, Industrie, Mittelstand und Handwerk' 36. Sitzung </subject> <description/> <start_date>2014-05-02</start_date> <due_date/> <done_ratio>0</done_ratio> <estimated_hours/> <custom_fields type='array'> <custom_field id='4' name='Datum'> <value>2014-05-07</value> </custom_field> <custom_field id='12' name='Ort'> <value>E1 - D05</value> </custom_field> <custom_field id='10' name='Uhrzeit von'> <value>10:00</value> </custom_field> <custom_field id='11' name='Uhrzeit bis'> <value>14:00</value> </custom_field> </custom_fields> <created_on>2014-05-02T09:26:31Z</created_on> <updated_on>2014-05-02T09:26:31Z</updated_on> <closed_on/> </issue> </issues>");
+			globalSitzungen.update("<issues total_count='3' offset='0' limit='25' type='array'> <issue> <id>10677</id> <project id='66' name='Plenum'/> <tracker id='15' name='Sitzung'/> <status id='10' name='ZukÃ¼nftige'/> <priority id='2' name='Normal'/> <author id='66' name='Ansgar Flack'/> <subject>UA17.1 'Klimaschutzplan' 6. Sitzung</subject> <description/> <start_date>2014-04-30</start_date> <due_date/> <done_ratio>0</done_ratio> <estimated_hours/> <custom_fields type='array'> <custom_field id='4' name='Datum'> <value>2014-05-05</value> </custom_field> <custom_field id='12' name='Ort'> <value>E1 - D05</value> </custom_field> <custom_field id='10' name='Uhrzeit von'> <value>11:00</value> </custom_field> <custom_field id='11' name='Uhrzeit bis'> <value>13:00</value> </custom_field> </custom_fields> <created_on>2014-04-30T13:26:41Z</created_on> <updated_on>2014-05-02T09:25:36Z</updated_on> <closed_on/> </issue> <issue> <id>10680</id> <project id='66' name='Plenum'/> <tracker id='15' name='Sitzung'/> <status id='10' name='ZukÃ¼nftige'/> <priority id='2' name='Normal'/> <author id='66' name='Ansgar Flack'/> <subject> A17 'Klimaschutz, Umwelt, Naturschutz, Landwirtschaft und Verbraucherschutz' 29. Sitzung </subject> <description/> <start_date>2014-04-30</start_date> <due_date/> <done_ratio>0</done_ratio> <estimated_hours/> <custom_fields type='array'> <custom_field id='4' name='Datum'> <value>2014-05-07</value> </custom_field> <custom_field id='12' name='Ort'> <value>E1 - D05</value> </custom_field> <custom_field id='10' name='Uhrzeit von'> <value>15:30</value> </custom_field> <custom_field id='11' name='Uhrzeit bis'> <value/> </custom_field> </custom_fields> <created_on>2014-04-30T13:34:13Z</created_on> <updated_on>2014-04-30T13:34:13Z</updated_on> <closed_on/> </issue> <issue> <id>10712</id> <project id='66' name='Plenum'/> <tracker id='15' name='Sitzung'/> <status id='1' name='Neu'/> <priority id='2' name='Normal'/> <author id='66' name='Ansgar Flack'/> <subject> A18 'Wirtschaft, Energie, Industrie, Mittelstand und Handwerk' 36. Sitzung </subject> <description/> <start_date>2014-05-02</start_date> <due_date/> <done_ratio>0</done_ratio> <estimated_hours/> <custom_fields type='array'> <custom_field id='4' name='Datum'> <value>2014-05-07</value> </custom_field> <custom_field id='12' name='Ort'> <value>E1 - D05</value> </custom_field> <custom_field id='10' name='Uhrzeit von'> <value>10:00</value> </custom_field> <custom_field id='11' name='Uhrzeit bis'> <value>14:00</value> </custom_field> </custom_fields> <created_on>2014-05-02T09:26:31Z</created_on> <updated_on>2014-05-02T09:26:31Z</updated_on> <closed_on/> </issue> </issues>");
 		}
 		else
 		{
 			try {
-				String tmp = this.redmineURL+"getfromredmine.php?anfrage="+URL.encodeQueryString("https://redmine.piratenfraktion-nrw.de/issues.xml?project_id=Plenum&tracker_id=15&status_id=open&sort=cf_4");
+				String tmp = this.redmineURL+"getfromredmine.php?anfrage="+URL.encodeQueryString("issues.xml?project_id=Plenum&tracker_id=15&status_id=open&sort=cf_4");
 				myDebugger("Debug", "hole von redmine "+tmp);
 				new RequestBuilder(RequestBuilder.GET, tmp).sendRequest("", new RequestCallback()
 					{
@@ -136,8 +171,25 @@ class Tagesordnungspunkt {
 	String uhrzeitStart;
 	String nummer;
 	
+	public Tagesordnungspunkt ()
+	{
+		this.ticketId = "";
+		this.titel = "";
+		this.uhrzeitStart = "";
+		this.nummer = "";
+	}
+	
+	public Tagesordnungspunkt (String RedmineXML)
+	{
+		
+	}
+	
 }
 
+class Tagesordnungspunkte {
+	private HashMap<String,Tagesordnungspunkt> topNachTicketId;
+	
+}
 
 class myIssueClickHandler implements ClickHandler {
 	private String id;
@@ -169,7 +221,8 @@ class mySitzungClickHandler implements ClickHandler {
 	@Override
 	public void onClick(ClickEvent event) {
 
-			myDebugger("Debug", "Sitzung "+this.id+" ausgewählt");
+			myDebugger("Debug", "Sitzung "+this.id+" ausgewÃ¤hlt");
+			globalRedmineConnector.getTops(id);
 		
 
 	}
@@ -268,7 +321,7 @@ class Sitzungen
 
 		int i = 0;  
 		
-		// Über alle Sitzungen itterieren
+		// Ãœber alle Sitzungen itterieren
         while (d.getElementsByTagName("issue").item(i) != null) {  
         
 	        com.google.gwt.xml.client.Node sessionNode = d.getElementsByTagName("issue").item(i);  
@@ -401,7 +454,7 @@ class Sitzungen
 	    splitPanel.addWest(slpLinks, 200);
 
 	    centerText = new Label();
-	    centerText.setText("mich sollte man nicht lesen können");
+	    centerText.setText("mich sollte man nicht lesen kÃ¶nnen");
 	    ScrollPanel centerScrollable = new ScrollPanel(centerText);
 	    splitPanel.add(centerScrollable);
 		
@@ -503,7 +556,7 @@ class Sitzungen
 				    
 					centerText.setText("hab was geladen. Code "+resp.getStatusCode()+" "+resp.getStatusText()+"/n"+resp.getText());
 				    //RootPanel.get().add(verarbeitestring(text));
-					//RootPanel.get().add(new Label("rückgabe"));
+					//RootPanel.get().add(new Label("rÃ¼ckgabe"));
 				 }
 
 				  @Override
