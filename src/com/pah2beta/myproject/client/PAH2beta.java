@@ -95,7 +95,7 @@ class RedmineConnector {
 
 		if (this.fake)
 		{
-			globalSitzungen.update("<issues total_count='3' offset='0' limit='25' type='array'> <issue> <id>10677</id> <project id='66' name='Plenum'/> <tracker id='15' name='Sitzung'/> <status id='10' name='Zukünftige'/> <priority id='2' name='Normal'/> <author id='66' name='Ansgar Flack'/> <subject>UA17.1 'Klimaschutzplan' 6. Sitzung</subject> <description/> <start_date>2014-04-30</start_date> <due_date/> <done_ratio>0</done_ratio> <estimated_hours/> <custom_fields type='array'> <custom_field id='4' name='Datum'> <value>2014-05-05</value> </custom_field> <custom_field id='12' name='Ort'> <value>E1 - D05</value> </custom_field> <custom_field id='10' name='Uhrzeit von'> <value>11:00</value> </custom_field> <custom_field id='11' name='Uhrzeit bis'> <value>13:00</value> </custom_field> </custom_fields> <created_on>2014-04-30T13:26:41Z</created_on> <updated_on>2014-05-02T09:25:36Z</updated_on> <closed_on/> </issue> <issue> <id>10680</id> <project id='66' name='Plenum'/> <tracker id='15' name='Sitzung'/> <status id='10' name='Zukünftige'/> <priority id='2' name='Normal'/> <author id='66' name='Ansgar Flack'/> <subject> A17 'Klimaschutz, Umwelt, Naturschutz, Landwirtschaft und Verbraucherschutz' 29. Sitzung </subject> <description/> <start_date>2014-04-30</start_date> <due_date/> <done_ratio>0</done_ratio> <estimated_hours/> <custom_fields type='array'> <custom_field id='4' name='Datum'> <value>2014-05-07</value> </custom_field> <custom_field id='12' name='Ort'> <value>E1 - D05</value> </custom_field> <custom_field id='10' name='Uhrzeit von'> <value>15:30</value> </custom_field> <custom_field id='11' name='Uhrzeit bis'> <value/> </custom_field> </custom_fields> <created_on>2014-04-30T13:34:13Z</created_on> <updated_on>2014-04-30T13:34:13Z</updated_on> <closed_on/> </issue> <issue> <id>10712</id> <project id='66' name='Plenum'/> <tracker id='15' name='Sitzung'/> <status id='1' name='Neu'/> <priority id='2' name='Normal'/> <author id='66' name='Ansgar Flack'/> <subject> A18 'Wirtschaft, Energie, Industrie, Mittelstand und Handwerk' 36. Sitzung </subject> <description/> <start_date>2014-05-02</start_date> <due_date/> <done_ratio>0</done_ratio> <estimated_hours/> <custom_fields type='array'> <custom_field id='4' name='Datum'> <value>2014-05-07</value> </custom_field> <custom_field id='12' name='Ort'> <value>E1 - D05</value> </custom_field> <custom_field id='10' name='Uhrzeit von'> <value>10:00</value> </custom_field> <custom_field id='11' name='Uhrzeit bis'> <value>14:00</value> </custom_field> </custom_fields> <created_on>2014-05-02T09:26:31Z</created_on> <updated_on>2014-05-02T09:26:31Z</updated_on> <closed_on/> </issue> </issues>");
+			globalSitzungen.sitzungenNachTicketId.get(globalSitzungen.selectedSitzung).tagesordnung.update("<issues total_count='9' offset='0' limit='25' type='array'> <issue> <id>10713</id> <project id='66' name='Plenum'/> <tracker id='14' name='Tagesordnungspunkte'/> <status id='10' name='Zukünftige'/> <priority id='2' name='Normal'/> <author id='66' name='Ansgar Flack'/> <subject> Fairen Wettbewerb schaffen: Klare energiewirtschaftliche Regelungen bei der Vergabe von Konzessionen für Strom- und Gasnetze </subject> <description/> <start_date>2014-05-02</start_date> <due_date/> <done_ratio>0</done_ratio> <estimated_hours/> <custom_fields type='array'> <custom_field id='4' name='Datum'> <value>2014-05-07</value> </custom_field> <custom_field id='10' name='Uhrzeit von'> <value/> </custom_field> <custom_field id='59' name='Top'> <value>1</value> </custom_field> <custom_field id='57' name='hat Abstimmungen'> <value>0</value> </custom_field> <custom_field id='58' name='wir Reden'> <value>0</value> </custom_field> </custom_fields> <created_on>2014-05-02T09:27:10Z</created_on> <updated_on>2014-05-05T11:23:05Z</updated_on> <closed_on/> </issue> <issue> <id>10715</id> <project id='66' name='Plenum'/> <tracker id='14' name='Tagesordnungspunkte'/> <status id='10' name='Zukünftige'/> <priority id='2' name='Normal'/> <author id='66' name='Ansgar Flack'/> <subject> Vermeidung von „Greenwashing“ bei der Umstellung der Stromversorgung der Gebäude bzw. Liegenschaften des Landes Nordrhein-Westfalen auf elektrische Energie aus regenerativen Quellen </subject> <description/> <start_date>2014-05-02</start_date> <due_date/> <done_ratio>0</done_ratio> <estimated_hours/> <custom_fields type='array'> <custom_field id='4' name='Datum'> <value>2014-05-07</value> </custom_field> <custom_field id='10' name='Uhrzeit von'> <value/> </custom_field> <custom_field id='59' name='Top'> <value>2</value> </custom_field> <custom_field id='57' name='hat Abstimmungen'> <value>0</value> </custom_field> <custom_field id='58' name='wir Reden'> <value>0</value> </custom_field> </custom_fields> <created_on>2014-05-02T09:58:18Z</created_on> <updated_on>2014-05-02T09:58:18Z</updated_on> <closed_on/> </issue> <issue> <id>10716</id> <project id='66' name='Plenum'/> <tracker id='14' name='Tagesordnungspunkte'/> <status id='10' name='Zukünftige'/> <priority id='2' name='Normal'/> <author id='66' name='Ansgar Flack'/> <subject> Einigung zwischen Bundesregierung und der EU-Kommission zu den besonderen Ausgleichsregelungen für stromintensive Unternehmen in Nordrhein-Westfalen </subject> <description/> <start_date>2014-05-02</start_date> <due_date/> <done_ratio>0</done_ratio> <estimated_hours/> <custom_fields type='array'> <custom_field id='4' name='Datum'> <value>2014-05-07</value> </custom_field> <custom_field id='10' name='Uhrzeit von'> <value/> </custom_field> <custom_field id='59' name='Top'> <value>3</value> </custom_field> <custom_field id='57' name='hat Abstimmungen'> <value>0</value> </custom_field> <custom_field id='58' name='wir Reden'> <value>0</value> </custom_field> </custom_fields> <created_on>2014-05-02T09:59:01Z</created_on> <updated_on>2014-05-02T09:59:01Z</updated_on> <closed_on/> </issue> <issue> <id>10717</id> <project id='66' name='Plenum'/> <tracker id='14' name='Tagesordnungspunkte'/> <status id='10' name='Zukünftige'/> <priority id='2' name='Normal'/> <author id='66' name='Ansgar Flack'/> <subject> Entwicklungschancen eröffnen, nicht beschränken - Rot-Grüne LEP-Novelle darf Kommunen und Wirtschaft nicht drosseln </subject> <description/> <start_date>2014-05-02</start_date> <due_date/> <done_ratio>0</done_ratio> <estimated_hours/> <custom_fields type='array'> <custom_field id='4' name='Datum'> <value>2014-05-07</value> </custom_field> <custom_field id='10' name='Uhrzeit von'> <value/> </custom_field> <custom_field id='59' name='Top'> <value>4</value> </custom_field> <custom_field id='57' name='hat Abstimmungen'> <value>0</value> </custom_field> <custom_field id='58' name='wir Reden'> <value>0</value> </custom_field> </custom_fields> <created_on>2014-05-02T09:59:26Z</created_on> <updated_on>2014-05-02T09:59:26Z</updated_on> <closed_on/> </issue> <issue> <id>10718</id> <project id='66' name='Plenum'/> <tracker id='14' name='Tagesordnungspunkte'/> <status id='10' name='Zukünftige'/> <priority id='2' name='Normal'/> <author id='66' name='Ansgar Flack'/> <subject> Moratorium jetzt: Landesregierung muss ihren missglückten Entwurf einer Novelle des Landesentwicklungsplans sofort zurückziehen! </subject> <description/> <start_date>2014-05-02</start_date> <due_date/> <done_ratio>0</done_ratio> <estimated_hours/> <custom_fields type='array'> <custom_field id='4' name='Datum'> <value>2014-05-07</value> </custom_field> <custom_field id='10' name='Uhrzeit von'> <value/> </custom_field> <custom_field id='59' name='Top'> <value>5</value> </custom_field> <custom_field id='57' name='hat Abstimmungen'> <value>0</value> </custom_field> <custom_field id='58' name='wir Reden'> <value>0</value> </custom_field> </custom_fields> <created_on>2014-05-02T10:00:19Z</created_on> <updated_on>2014-05-02T10:00:19Z</updated_on> <closed_on/> </issue> <issue> <id>10719</id> <project id='66' name='Plenum'/> <tracker id='14' name='Tagesordnungspunkte'/> <status id='10' name='Zukünftige'/> <priority id='2' name='Normal'/> <author id='66' name='Ansgar Flack'/> <subject> Wie geht es weiter mit dem Braunkohlentagesbau in Nordrhein-Westfalen? - Landesregierung muss endlich Antworten geben </subject> <description/> <start_date>2014-05-02</start_date> <due_date/> <done_ratio>0</done_ratio> <estimated_hours/> <custom_fields type='array'> <custom_field id='4' name='Datum'> <value>2014-05-07</value> </custom_field> <custom_field id='10' name='Uhrzeit von'> <value/> </custom_field> <custom_field id='59' name='Top'> <value>6</value> </custom_field> <custom_field id='57' name='hat Abstimmungen'> <value>0</value> </custom_field> <custom_field id='58' name='wir Reden'> <value>0</value> </custom_field> </custom_fields> <created_on>2014-05-02T10:00:59Z</created_on> <updated_on>2014-05-02T10:00:59Z</updated_on> <closed_on/> </issue> <issue> <id>10720</id> <project id='66' name='Plenum'/> <tracker id='14' name='Tagesordnungspunkte'/> <status id='10' name='Zukünftige'/> <priority id='2' name='Normal'/> <author id='66' name='Ansgar Flack'/> <subject> Zeitgemäße Evaluierungskultur für Wirtschaftsförderprogramme aufbauen - Wirksamkeit und Transparenz sicherstellen </subject> <description/> <start_date>2014-05-02</start_date> <due_date/> <done_ratio>0</done_ratio> <estimated_hours/> <custom_fields type='array'> <custom_field id='4' name='Datum'> <value>2014-05-07</value> </custom_field> <custom_field id='10' name='Uhrzeit von'> <value/> </custom_field> <custom_field id='59' name='Top'> <value>7</value> </custom_field> <custom_field id='57' name='hat Abstimmungen'> <value>0</value> </custom_field> <custom_field id='58' name='wir Reden'> <value>0</value> </custom_field> </custom_fields> <created_on>2014-05-02T10:01:47Z</created_on> <updated_on>2014-05-02T10:01:47Z</updated_on> <closed_on/> </issue> <issue> <id>10721</id> <project id='66' name='Plenum'/> <tracker id='14' name='Tagesordnungspunkte'/> <status id='10' name='Zukünftige'/> <priority id='2' name='Normal'/> <author id='66' name='Ansgar Flack'/> <subject> Breitbandausbau beschleunigen - Landesregierung muss Operationelles Programm EFRE für flächendeckenden Breitbandausbau öffnen! </subject> <description/> <start_date>2014-05-02</start_date> <due_date/> <done_ratio>0</done_ratio> <estimated_hours/> <custom_fields type='array'> <custom_field id='4' name='Datum'> <value>2014-05-07</value> </custom_field> <custom_field id='10' name='Uhrzeit von'> <value/> </custom_field> <custom_field id='59' name='Top'> <value>8</value> </custom_field> <custom_field id='57' name='hat Abstimmungen'> <value>0</value> </custom_field> <custom_field id='58' name='wir Reden'> <value>0</value> </custom_field> </custom_fields> <created_on>2014-05-02T10:02:29Z</created_on> <updated_on>2014-05-02T10:02:29Z</updated_on> <closed_on/> </issue> <issue> <id>10722</id> <project id='66' name='Plenum'/> <tracker id='14' name='Tagesordnungspunkte'/> <status id='10' name='Zukünftige'/> <priority id='2' name='Normal'/> <author id='66' name='Ansgar Flack'/> <subject> Erstes Gesetz zur Änderung des Gesetzes über Immobilien- und Standortgemeinschaften </subject> <description/> <start_date>2014-05-02</start_date> <due_date/> <done_ratio>0</done_ratio> <estimated_hours/> <custom_fields type='array'> <custom_field id='4' name='Datum'> <value>2014-05-07</value> </custom_field> <custom_field id='10' name='Uhrzeit von'> <value/> </custom_field> <custom_field id='59' name='Top'> <value>9</value> </custom_field> <custom_field id='57' name='hat Abstimmungen'> <value>0</value> </custom_field> <custom_field id='58' name='wir Reden'> <value>0</value> </custom_field> </custom_fields> <created_on>2014-05-02T10:03:17Z</created_on> <updated_on>2014-05-02T10:03:17Z</updated_on> <closed_on/> </issue> </issues>");
 		}
 		else
 		{
@@ -107,7 +107,7 @@ class RedmineConnector {
 					  @Override
 					  public void onResponseReceived(Request req, Response resp) {
 						  myDebugger("Debug", "Antwort bekommen "+resp.getText());
-						 // globalSitzungen.update(resp.getText());
+						 globalSitzungen.sitzungenNachTicketId.get(globalSitzungen.selectedSitzung).tagesordnung.update(resp.getText());
 					 }
 
 					  @Override
@@ -135,7 +135,7 @@ class RedmineConnector {
 		else
 		{
 			try {
-				String tmp = this.redmineURL+"getfromredmine.php?anfrage="+URL.encodeQueryString("issues.xml?project_id=Plenum&tracker_id=15&status_id=open&sort=cf_4");
+				String tmp = this.redmineURL+"getfromredmine.php?anfrage="+URL.encodeQueryString("issues.xml?project_id=Plenum&tracker_id=15&status_id=open&sort=cf_4:desc");
 				myDebugger("Debug", "hole von redmine "+tmp);
 				new RequestBuilder(RequestBuilder.GET, tmp).sendRequest("", new RequestCallback()
 					{
@@ -165,31 +165,7 @@ class RedmineConnector {
 	
 	
 	
-class Tagesordnungspunkt {
-	String ticketId;
-	String titel;
-	String uhrzeitStart;
-	String nummer;
-	
-	public Tagesordnungspunkt ()
-	{
-		this.ticketId = "";
-		this.titel = "";
-		this.uhrzeitStart = "";
-		this.nummer = "";
-	}
-	
-	public Tagesordnungspunkt (String RedmineXML)
-	{
-		
-	}
-	
-}
 
-class Tagesordnungspunkte {
-	private HashMap<String,Tagesordnungspunkt> topNachTicketId;
-	
-}
 
 class myIssueClickHandler implements ClickHandler {
 	private String id;
@@ -208,8 +184,6 @@ class myIssueClickHandler implements ClickHandler {
 	}
 }
 
-
-
 class mySitzungClickHandler implements ClickHandler {
 	private String id;
 
@@ -222,12 +196,164 @@ class mySitzungClickHandler implements ClickHandler {
 	public void onClick(ClickEvent event) {
 
 			myDebugger("Debug", "Sitzung "+this.id+" ausgewählt");
+			globalSitzungen.setSelectedSitzung(id);
 			globalRedmineConnector.getTops(id);
 		
 
 	}
 }
 
+
+
+class Tagesordnungspunkt {
+	String ticketId;
+	String titel;
+	String uhrzeitStart;
+	String nummer;
+	Widget ui;
+	
+	public Tagesordnungspunkt ()
+	{
+		this.ticketId = "";
+		this.titel = "";
+		this.uhrzeitStart = "";
+		this.nummer = "";
+		this.ui = new Widget();
+	}
+	
+
+	public Widget getUi()
+	{
+		if (ui != null)
+		{
+			return ui;
+		}
+		else
+		{
+			Anchor anchor = new Anchor("#"+ticketId); // At this point clicking it won't do a thing
+			anchor.addClickHandler(new myIssueClickHandler(ticketId));
+			
+		    Label labelTitel = new Label(titel);
+		    //Label labelRedmineId = new Label(anchor);
+		    Label labelDatum = new Label("Startzeit: "+uhrzeitStart);
+		    VerticalPanel vpanelSitzung = new VerticalPanel();
+		    vpanelSitzung.add(anchor);
+		    vpanelSitzung.add(labelTitel);
+		    
+		    vpanelSitzung.add(labelDatum);
+		    
+		    FocusPanel fpanelSitzung = new FocusPanel();
+		    fpanelSitzung.add(vpanelSitzung);
+		    fpanelSitzung.addClickHandler(new mySitzungClickHandler(this.ticketId));
+		    
+		    
+		    
+		    DecoratorPanel dpanelSitzung = new DecoratorPanel();
+		    dpanelSitzung.add(fpanelSitzung);
+			
+		    return dpanelSitzung;
+		    
+		}
+	}
+	
+}
+
+
+class Tagesordnungspunkte
+{
+	private HashMap<String,Tagesordnungspunkt> topNachTicketId;
+	
+	public Tagesordnungspunkte()
+	{
+		topNachTicketId = new HashMap<String,Tagesordnungspunkt>();
+	}
+	
+	public Widget getUi(){
+		
+	    VerticalPanel vPanelAktuelleSitzungen = new VerticalPanel();
+	    vPanelAktuelleSitzungen.setSpacing(10);
+	    vPanelAktuelleSitzungen.setWidth("100%");
+		
+		for (String key : topNachTicketId.keySet()) {
+			vPanelAktuelleSitzungen.add(topNachTicketId.get(key).getUi());
+		}
+
+		return vPanelAktuelleSitzungen;
+		
+	}
+	
+	public void update(String xmlRedmine)
+	{
+		Document d = XMLParser.parse( xmlRedmine ); // xml - xml data retrieved from server
+
+		int i = 0;  
+		
+		// Über alle TOPs itterieren
+        while (d.getElementsByTagName("issue").item(i) != null)
+        {  
+        
+	        com.google.gwt.xml.client.Node sessionNode = d.getElementsByTagName("issue").item(i);  
+
+	        com.google.gwt.xml.client.Node trackerNode = ((Element)sessionNode).getElementsByTagName("tracker").item(0);
+	        String trackerName = ((Element)trackerNode).getAttribute("name");
+	        
+	        if (!trackerName.equals("Tagesordnungspunkte"))
+	        {
+	        	myDebugger("Debug", "Kein tagesordnungspunkt");
+	        }
+	        else
+	        {
+		        
+		        String tmp_ticketId = "";
+	        	String tmp_titel = "";
+	        	String tmp_uhrzeitStart = "";
+	        	String tmp_nummer = "";
+	   	
+		             
+		        tmp_ticketId = ((Element)sessionNode).getElementsByTagName("id").item(0).getFirstChild().getNodeValue();
+		        tmp_titel =  ((Element)sessionNode).getElementsByTagName("subject").item(0).getFirstChild().getNodeValue();
+		        
+		        int custom_i = 0;
+		        while (((Element)sessionNode).getElementsByTagName("custom_field").item(custom_i) != null) {  
+		        	
+		        	
+		        	try
+		        	{
+		        	
+			        	com.google.gwt.xml.client.Node customNode = ((Element)sessionNode).getElementsByTagName("custom_field").item(custom_i);
+			        	
+			        	String customName = ((Element)customNode).getAttribute("name");
+			        	String customValue = ((Element)customNode).getElementsByTagName("value").item(0).getFirstChild().getNodeValue();
+			        	
+			        	if (customName.equals("Uhrzeit von"))
+			        		tmp_uhrzeitStart = customValue;
+			        	if (customName.equals("Top"))
+			        		tmp_nummer = customValue;
+		        	}
+		        	catch (Exception e)
+		        	{
+		        		myDebugger("Exception", "Fehler beim verarbeiten der custom fields von Ticket "+tmp_ticketId);
+		        	}
+		        	
+		        	custom_i++;
+		        }
+		        
+		        Tagesordnungspunkt tmp_top = new Tagesordnungspunkt();
+		        tmp_top.titel = tmp_titel;
+		        tmp_top.ticketId = tmp_ticketId;
+		        tmp_top.nummer = tmp_nummer;
+		        tmp_top.uhrzeitStart = tmp_uhrzeitStart;
+
+		        topNachTicketId.put(tmp_ticketId, tmp_top);
+		        
+		        i++;
+	        }
+	        globalTopSPanel.clear();
+	        globalTopSPanel.add(getUi());
+
+        }  
+ 	}
+} //Ende Klasse
 
 class Sitzung {
 	String ort;
@@ -238,6 +364,7 @@ class Sitzung {
 	String uhrzeitEnde;
 	Widget ui;
 	String stand;
+	Tagesordnungspunkte tagesordnung;
 	
 	public Sitzung() {
 		ort = "";
@@ -248,6 +375,7 @@ class Sitzung {
 		ui = null;
 		titel = "";
 		stand ="";
+		tagesordnung = new Tagesordnungspunkte();
 	}
 
 	public Widget getUi() {
@@ -292,11 +420,22 @@ class Sitzungen
 {
 	
 	private HashMap<String,Sitzung> sitzungenNachTicketId; 
+	private String selectedSitzung;
 	
+	public String getSelectedSitzung()
+	{
+		return selectedSitzung;
+	}
+	
+	public void setSelectedSitzung(String issueID)
+	{
+		selectedSitzung = issueID;
+	}
 	
 	public Sitzungen()
 	{
 		sitzungenNachTicketId = new HashMap<String,Sitzung>();
+		selectedSitzung = "";
 	}
 	
 	
@@ -408,7 +547,14 @@ class Sitzungen
 	/**
 	 * This is the entry point method.
 	 */
+
 	
+	public Label centerText;
+	public Sitzungen globalSitzungen;
+	public RedmineConnector globalRedmineConnector;
+	public FlexTable globalDebugger;
+	public ScrollPanel globalSitzungenSPanel;
+	public ScrollPanel globalTopSPanel;
 	
 	public void init ()
 	{
@@ -416,6 +562,7 @@ class Sitzungen
 	    globalSitzungen = new Sitzungen();
 	    globalRedmineConnector = new RedmineConnector("https://abstimmung2.piratenfraktion-nrw.de/",false);
 	    globalSitzungenSPanel = new ScrollPanel();
+	    globalTopSPanel = new ScrollPanel();
 	    
 		SplitLayoutPanel splitPanel = new SplitLayoutPanel(8);
 	    splitPanel.ensureDebugId("cwSplitLayoutPanel");
@@ -468,11 +615,6 @@ class Sitzungen
 	
 	/** Globale Variablen */
 	
-	public Label centerText;
-	public Sitzungen globalSitzungen;
-	public RedmineConnector globalRedmineConnector;
-	public FlexTable globalDebugger;
-	public ScrollPanel globalSitzungenSPanel;
 	
 	public void onModuleLoad() {
 		init();
@@ -572,3 +714,6 @@ class Sitzungen
 	    */
 	}
 }
+
+
+
