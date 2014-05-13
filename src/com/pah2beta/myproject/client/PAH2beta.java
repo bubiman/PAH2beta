@@ -39,6 +39,7 @@ import com.google.gwt.user.client.ui.ScrollPanel;
 import com.google.gwt.user.client.ui.SplitLayoutPanel;
 import com.google.gwt.user.client.ui.StackLayoutPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
+import com.google.gwt.user.client.ui.VerticalSplitPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.gwt.xml.client.Document;
 import com.google.gwt.xml.client.Element;
@@ -230,6 +231,13 @@ class Tagesordnungspunkt {
 		    Label labelTitel = new Label(titel);
 		    //Label labelRedmineId = new Label(anchor);
 		    Label labelDatum = new Label("Startzeit: "+uhrzeitStart);
+		    
+		    HorizontalPanel tmpHPanel = new HorizontalPanel();
+		    
+		    Label labelNummer = new Label(nummer);
+		    
+		    tmpHPanel.add(labelNummer);
+		    
 		    VerticalPanel vpanelSitzung = new VerticalPanel();
 		    vpanelSitzung.add(anchor);
 		    vpanelSitzung.add(labelTitel);
@@ -245,7 +253,9 @@ class Tagesordnungspunkt {
 		    DecoratorPanel dpanelSitzung = new DecoratorPanel();
 		    dpanelSitzung.add(fpanelSitzung);
 			
-		    return dpanelSitzung;
+		    tmpHPanel.add(dpanelSitzung);
+		    
+		    return tmpHPanel;
 		    
 		
 	}
