@@ -602,7 +602,7 @@ class Sitzungen
 
 	    centerText = new Label();
 	    centerText.setText("mich sollte man nicht lesen können");
-	    ScrollPanel centerScrollable = new ScrollPanel(centerText);
+	    ScrollPanel centerScrollable = new ScrollPanel(globalTopSPanel);
 	    splitPanel.add(centerScrollable);
 		
 	    RootLayoutPanel.get().add(splitPanel);
