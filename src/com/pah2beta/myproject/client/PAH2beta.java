@@ -224,12 +224,6 @@ class Tagesordnungspunkt {
 
 	public Widget getUi()
 	{
-		if (ui != null)
-		{
-			return ui;
-		}
-		else
-		{
 			Anchor anchor = new Anchor("#"+ticketId); // At this point clicking it won't do a thing
 			anchor.addClickHandler(new myIssueClickHandler(ticketId));
 			
@@ -253,7 +247,7 @@ class Tagesordnungspunkt {
 			
 		    return dpanelSitzung;
 		    
-		}
+		
 	}
 	
 }
@@ -291,68 +285,76 @@ class Tagesordnungspunkte
 		// Über alle TOPs itterieren
         while (d.getElementsByTagName("issue").item(i) != null)
         {  
+	        String tmp_ticketId = "";
         
-	        com.google.gwt.xml.client.Node sessionNode = d.getElementsByTagName("issue").item(i);  
-
-	        com.google.gwt.xml.client.Node trackerNode = ((Element)sessionNode).getElementsByTagName("tracker").item(0);
-	        String trackerName = ((Element)trackerNode).getAttribute("name");
-	        
-	        if (!trackerName.equals("Tagesordnungspunkte"))
-	        {
-	        	myDebugger("Debug", "Kein tagesordnungspunkt");
-	        }
-	        else
-	        {
+        	try
+        	{
+		        com.google.gwt.xml.client.Node sessionNode = d.getElementsByTagName("issue").item(i);  
+	
+		        com.google.gwt.xml.client.Node trackerNode = ((Element)sessionNode).getElementsByTagName("tracker").item(0);
+		        String trackerName = ((Element)trackerNode).getAttribute("name");
 		        
-		        String tmp_ticketId = "";
-	        	String tmp_titel = "";
-	        	String tmp_uhrzeitStart = "";
-	        	String tmp_nummer = "";
-	   	
-		             
-		        tmp_ticketId = ((Element)sessionNode).getElementsByTagName("id").item(0).getFirstChild().getNodeValue();
-		        tmp_titel =  ((Element)sessionNode).getElementsByTagName("subject").item(0).getFirstChild().getNodeValue();
-		        
-		        int custom_i = 0;
-		        while (((Element)sessionNode).getElementsByTagName("custom_field").item(custom_i) != null) {  
-		        	
-		        	
-		        	try
-		        	{
-		        	
-			        	com.google.gwt.xml.client.Node customNode = ((Element)sessionNode).getElementsByTagName("custom_field").item(custom_i);
-			        	
-			        	String customName = ((Element)customNode).getAttribute("name");
-			        	String customValue = ((Element)customNode).getElementsByTagName("value").item(0).getFirstChild().getNodeValue();
-			        	
-			        	if (customName.equals("Uhrzeit von"))
-			        		tmp_uhrzeitStart = customValue;
-			        	if (customName.equals("Top"))
-			        		tmp_nummer = customValue;
-		        	}
-		        	catch (Exception e)
-		        	{
-		        		myDebugger("Exception", "Fehler beim verarbeiten der custom fields von Ticket "+tmp_ticketId);
-		        	}
-		        	
-		        	custom_i++;
+		        if (!trackerName.equals("Tagesordnungspunkte"))
+		        {
+		        	myDebugger("Debug", "Kein tagesordnungspunkt");
 		        }
-		        
-		        Tagesordnungspunkt tmp_top = new Tagesordnungspunkt();
-		        tmp_top.titel = tmp_titel;
-		        tmp_top.ticketId = tmp_ticketId;
-		        tmp_top.nummer = tmp_nummer;
-		        tmp_top.uhrzeitStart = tmp_uhrzeitStart;
-
-		        topNachTicketId.put(tmp_ticketId, tmp_top);
-		        
-		        i++;
+		        else
+		        {
+			        
+		        	String tmp_titel = "";
+		        	String tmp_uhrzeitStart = "";
+		        	String tmp_nummer = "";
+		   	
+			             
+			        tmp_ticketId = ((Element)sessionNode).getElementsByTagName("id").item(0).getFirstChild().getNodeValue();
+			        tmp_titel =  ((Element)sessionNode).getElementsByTagName("subject").item(0).getFirstChild().getNodeValue();
+			        
+			        int custom_i = 0;
+			        while (((Element)sessionNode).getElementsByTagName("custom_field").item(custom_i) != null) {  
+			        	
+			        	
+			        	try
+			        	{
+			        	
+				        	com.google.gwt.xml.client.Node customNode = ((Element)sessionNode).getElementsByTagName("custom_field").item(custom_i);
+				        	
+				        	String customName = ((Element)customNode).getAttribute("name");
+				        	String customValue = ((Element)customNode).getElementsByTagName("value").item(0).getFirstChild().getNodeValue();
+				        	
+				        	if (customName.equals("Uhrzeit von"))
+				        		tmp_uhrzeitStart = customValue;
+				        	if (customName.equals("Top"))
+				        		tmp_nummer = customValue;
+			        	}
+			        	catch (Exception e)
+			        	{
+			        		myDebugger("Exception", "Fehler beim verarbeiten der custom fields von Ticket "+tmp_ticketId);
+			        	}
+			        	
+			        	custom_i++;
+			        }
+			        
+			        Tagesordnungspunkt tmp_top = new Tagesordnungspunkt();
+			        tmp_top.titel = tmp_titel;
+			        tmp_top.ticketId = tmp_ticketId;
+			        tmp_top.nummer = tmp_nummer;
+			        tmp_top.uhrzeitStart = tmp_uhrzeitStart;
+	
+			        topNachTicketId.put(tmp_ticketId, tmp_top);
+		        }
+        	} // Ende try blokc
+	        catch (Exception e)
+        	{
+        		myDebugger("Exception", "Fehler beim verarbeiten der custom fields von Ticket "+tmp_ticketId);
+        	} // Ende catch block
+    	
+	        i++;
 	        }
 	        globalTopSPanel.clear();
 	        globalTopSPanel.add(getUi());
 
         }  
- 	}
+ 	
 } //Ende Klasse
 
 class Sitzung {
