@@ -101,7 +101,8 @@ class RedmineConnector {
 		else
 		{
 			try {
-				String tmp = this.redmineURL+"getfromredmine.php?anfrage="+URL.encodeQueryString("projects/plenum/issues.xml?f[]=relates&f[]=&group_by=&op[relates]==&op[status_id]=o&set_filter=1&utf8=✓&v[relates][]="+issueID);
+				String tmp = this.redmineURL+"getfromredmine.php?anfrage="+URL.encodeQueryString("projects/plenum/issues.xml?f[]=relates&f[]=&group_by=&op[relates]==&op[status_id]=o&set_filter=1&v[relates][]="+issueID+"&sort=cf_59");
+				//String tmp = this.redmineURL+"getfromredmine.php?anfrage="+URL.encodeQueryString("projects/plenum/issues.xml?f[]=relates&f[]=&group_by=&op[relates]==&op[status_id]=o&set_filter=1&utf8=✓&v[relates][]="+issueID+"&sort=cf_59");
 				myDebugger("Debug", "hole von redmine "+tmp);
 				new RequestBuilder(RequestBuilder.GET, tmp).sendRequest("", new RequestCallback()
 					{
@@ -234,7 +235,7 @@ class Tagesordnungspunkt {
 		    
 		    HorizontalPanel tmpHPanel = new HorizontalPanel();
 		    
-		    Label labelNummer = new Label(nummer);
+		    Label labelNummer = new Label("Top: "+nummer);
 		    
 		    tmpHPanel.add(labelNummer);
 		    
