@@ -138,7 +138,7 @@ class RedmineConnector {
 		{
 			try {
 				//String tmp = this.redmineURL+"getfromredmine.php?anfrage="+URL.encodeQueryString("issues.xml?project_id=Plenum&tracker_id=15&status_id=open&sort=cf_4:desc");
-				String tmp = this.redmineURL+"getfromredmine.php?anfrage="+URL.encodeQueryString("issues.xml?project_id=Plenum&tracker_id=15&sort=cf_4:desc");
+				String tmp = this.redmineURL+"getfromredmine.php?anfrage="+URL.encodeQueryString("issues.xml?project_id=Plenum&tracker_id=15&status_id=*&sort=cf_4:desc");
 				myDebugger("Debug", "hole von redmine "+tmp);
 				new RequestBuilder(RequestBuilder.GET, tmp).sendRequest("", new RequestCallback()
 					{
