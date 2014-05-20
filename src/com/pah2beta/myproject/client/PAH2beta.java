@@ -137,7 +137,8 @@ class RedmineConnector {
 		else
 		{
 			try {
-				String tmp = this.redmineURL+"getfromredmine.php?anfrage="+URL.encodeQueryString("issues.xml?project_id=Plenum&tracker_id=15&status_id=open&sort=cf_4:desc");
+				//String tmp = this.redmineURL+"getfromredmine.php?anfrage="+URL.encodeQueryString("issues.xml?project_id=Plenum&tracker_id=15&status_id=open&sort=cf_4:desc");
+				String tmp = this.redmineURL+"getfromredmine.php?anfrage="+URL.encodeQueryString("issues.xml?project_id=Plenum&tracker_id=15&sort=cf_4:desc");
 				myDebugger("Debug", "hole von redmine "+tmp);
 				new RequestBuilder(RequestBuilder.GET, tmp).sendRequest("", new RequestCallback()
 					{
@@ -245,14 +246,8 @@ class Tagesordnungspunkt {
 		    
 		    vpanelSitzung.add(labelDatum);
 		    
-		    FocusPanel fpanelSitzung = new FocusPanel();
-		    fpanelSitzung.add(vpanelSitzung);
-		    fpanelSitzung.addClickHandler(new mySitzungClickHandler(this.ticketId));
-		    
-		    
-		    
 		    DecoratorPanel dpanelSitzung = new DecoratorPanel();
-		    dpanelSitzung.add(fpanelSitzung);
+		    dpanelSitzung.add(vpanelSitzung);
 			
 		    tmpHPanel.add(dpanelSitzung);
 		    
